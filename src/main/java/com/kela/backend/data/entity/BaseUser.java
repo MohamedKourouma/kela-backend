@@ -24,8 +24,9 @@ public class BaseUser {
     private String id;
 
     private String userId;
-    private String firstname, lastname, email, phone, login, password, birthday, birthplace, creationDate;
+    private String firstname, lastname, email, phone, login, password, birthday, birthplace;
     private Address address;
+    private final String creationDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date());;
 
     public BaseUser(String firstname, String lastname, String email, String phone, String login, String password, String birthday, String birthplace, Address address) {
         this.userId = "K" + UUID.randomUUID().toString().replaceAll("-", "").toUpperCase();
@@ -37,7 +38,6 @@ public class BaseUser {
         this.login = login;
         this.password = password;
         this.birthday = birthday;
-        this.creationDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
         this.address = address;
     }
 
@@ -63,7 +63,6 @@ public class BaseUser {
         this.login = "";
         this.password = "";
         this.birthday = "";
-        this.creationDate = "";
         this.address = new Address();
     }
 
